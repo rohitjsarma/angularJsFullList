@@ -1,0 +1,14 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form action="p1.html" name="f1">
+ <select name="drp1" ng-model="d1" required>
+ <option value="">Select city</option>
+ <option >Hyd</option>
+  <option>sec</option>
+ </select>
+ <span style="color:red" ng-show="f1.drp1.$invalid">You must Select City</span>
+
+</form>
+</body>
+
+

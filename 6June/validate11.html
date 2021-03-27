@@ -1,0 +1,10 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form action="p1.html" name="f1">
+<input type="checkbox" name="chk1" ng-model="c1" required>
+{{c1}}
+<span ng-show="f1.chk1.$invalid">Check CB</span>
+</form>
+</body>
+
+

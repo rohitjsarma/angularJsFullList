@@ -1,0 +1,30 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope,$q){
+	sno=100
+ $scope.fun1=function(sn){
+	 q=$q.defer()
+	 if(angular.isNumber(sn))
+		q.resolve(++sn)
+		else
+		q.reject("Err")
+		return q.promise;
+	 }
+	  $scope.fun1(sno).then(function(dt){
+	  alert(dt)
+	  $scope.fun1("abc").then(function(dt){
+	  	  alert(dt)
+	  },function(){
+	  alert("Error in sec call")
+	  })
+	  },
+	  function(dt){
+		  alert("Err in firtst call")
+		  })
+	
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+
+</body>

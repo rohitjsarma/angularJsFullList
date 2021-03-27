@@ -1,0 +1,11 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form action="p1.html" name="f1">
+<input type="text" ng-model="t1" pattern="^[a-e 0-4]*$" name="txt1" required>
+<br>
+<span ng-show="f1.txt1.$error.required">Enter Text</span>
+<span ng-show="f1.txt1.$error.pattern">Enter valid pattern</span>
+</form>
+</body>
+
+

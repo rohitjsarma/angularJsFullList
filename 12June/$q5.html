@@ -1,0 +1,19 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller('c1',function($q,$http){
+$q.all([$http.get("p11.html"),$http.get("p22.html"),$http.get("p33x.html")]).then(
+function(dt){
+//console.log(dt)
+alert(dt[0].data)
+alert(dt[1].data)
+},
+function(edt){
+	alert(edt.config.url)
+console.log(edt)
+})
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+
+</body>

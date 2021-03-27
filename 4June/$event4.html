@@ -1,0 +1,25 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+	$scope.fun1=function(e){
+		if(e.key>=0 && e.key<=9)
+		{
+			alert("Valid")
+		}
+		else
+		{
+			
+			e.preventDefault()
+				alert("Invalid")
+		}
+if($scope.t1.length>=10){
+			e.preventDefault()
+	
+	}
+		}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1" >
+<input type="text" ng-model="t1" ng-keydown="fun1($event)">
+</body>

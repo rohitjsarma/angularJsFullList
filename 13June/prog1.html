@@ -1,0 +1,27 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.obj=[{
+uname:"scott",city:"hyd",sal:10000
+},{
+uname:"John",city:"hyd",sal:20000
+},{
+uname:"amith",city:"sec",sal:15000
+}]
+$scope.saltot=0
+for(i=0;i<$scope.obj.length;i++)
+{
+	$scope.saltot+=$scope.obj[i].sal
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<table border="1">
+<tr ng-repeat="x in obj">
+<td>{{x.uname}}<td>{{x.city}}<td>{{x.sal}}
+</tr>
+<tr><td colspan="3">Total salary:{{saltot}}
+</table>
+</body>
+

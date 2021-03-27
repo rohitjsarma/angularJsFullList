@@ -1,0 +1,13 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($window){
+$window.alert("hi")
+dt=$window.prompt("Enter name")
+//alert(dt)
+rv=$window.confirm("You want to print")
+alert(rv)
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+</body>

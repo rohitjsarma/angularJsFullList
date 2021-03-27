@@ -1,0 +1,35 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+	$scope.ord="uname"
+	$scope.fun1=function(){
+		if($scope.ord=="uname")
+		$scope.ord="-uname"
+		else
+		$scope.ord="uname"
+		}
+$scope.obj=[
+	{
+	uname:"scott",city:"hyd"
+	},{
+	uname:"john",city:"sec"
+	},{
+	uname:"112",city:"sec"
+	},{
+	uname:"100",city:"sec"
+	}
+]
+})
+</script>
+<body ng-app="myapp" ng-controller="c1" >
+ <table border="1">
+ <th ng-click="fun1()">Username</th>
+  <th>City</th>
+  <tr ng-repeat="x in obj | orderBy:ord" >
+ <td>{{x.uname}}</td>
+  <td>{{x.city}}</td>
+ </tr>
+ </table>
+</body>
+

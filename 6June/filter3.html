@@ -1,0 +1,18 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("con1",function($scope){
+	$scope.tmp=true
+$scope.fun1=function(val){
+	$scope.t1=val
+	$scope.tmp=false
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="con1"  ng-init="x=['scott','alex','smith','amith','sam','suresh','anand']">
+{{tmp}}
+<input type="text" ng-model="t1" ng-keyup="tmp=true">
+<li ng-repeat="v in x | filter:t1" ng-click="fun1(v)" ng-if="tmp">
+{{v}}
+</li>
+</body>

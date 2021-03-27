@@ -1,0 +1,23 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.x=100
+$scope.y="scott"
+})
+app.directive("d1",function(){
+return{
+	scope:{
+		v1:"=p1",
+		v2:"=p2"
+		},
+	template:"<h2>Scott</h2>{{v1}}-{{v2}}"
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<d1 p1="x" p2="y"></d1>
+</body>
+
+
+

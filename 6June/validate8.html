@@ -1,0 +1,10 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form action="p1.html" name="f1">
+ <input type="email" ng-model="t1" name="t1">
+ <img src="correct.png" width="15" ng-show="f1.t1.$dirty && f1.t1.$valid">
+ <img src="wrong.png" width="12" ng-show="f1.t1.$dirty && f1.t1.$invalid">
+</form>
+</body>
+
+

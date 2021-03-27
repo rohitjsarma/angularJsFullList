@@ -1,0 +1,11 @@
+<script src="angular.min.js"></script>
+<body ng-app >
+<form action="p1.html" name="f1">
+{{gen}}
+<input type="radio"  name="r1" ng-model="gen" value="m" required>Male
+<input type="radio"  name="r1" ng-model="gen" value="f" required>FeMale
+<span style="color:red" ng-show="f1.r1.$invalid">Select Gender</span>
+</form>
+</body>
+
+

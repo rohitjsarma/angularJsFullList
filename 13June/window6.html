@@ -1,0 +1,13 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($window,$scope){
+	$scope.fun1=function(){
+	alert($window.document.URL)
+
+			}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<button ng-click="fun1()">Click</button>
+</body>

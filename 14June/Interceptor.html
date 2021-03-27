@@ -1,0 +1,39 @@
+<script src="angular.min.js"></script>
+<script>
+function incfun() {
+  return {
+    request: function(x) {
+	console.log("req suc")
+      return x;
+    },
+    requestError: function() {
+		  console.log("req fail")
+    },
+    response: function(res) {
+	  console.log("res suc..")
+	  console.log(res)
+      return res
+    },
+    responseError: function() {
+		  console.log("res fail")
+    }
+  }
+}
+angular.module('app', [])
+.factory('incp1', incfun)
+.config(function($httpProvider) {
+  $httpProvider.interceptors.push('incp1');
+})
+.run(function($http) {
+  $http.get('pp.html')
+    .then(function(res) {
+		alert(res.data)
+    })
+})
+</script>
+<html>
+    <body ng-app="app">
+    </body>
+</html>
+
+

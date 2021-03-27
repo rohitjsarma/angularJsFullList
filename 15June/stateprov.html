@@ -1,0 +1,19 @@
+<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script>
+app=angular.module("myapp",['ui.router'])
+app.config(function($stateProvider){
+$stateProvider
+.state("home",{url:"/hm",templateUrl:"home1.html"})
+.state("abt",{url:"/an",templateUrl:"about1.html"})
+.state("cnt",{url:"/cn",templateUrl:"contact1.html"})
+})
+</script>
+<body ng-app="myapp">
+<a ui-sref="home">Home</a>
+<a ui-sref="abt">About us</a>
+<a ui-sref="cnt">Contact us</a>
+<div ui-view></div>
+
+</body>
+
