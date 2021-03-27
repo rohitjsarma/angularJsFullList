@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ShowHideUsingJs</title>
+	</head>
+	<body>
+		<img src="../images/img.gif" height="150" width="150" class="ims" style="visibility: hidden;">
+		<input type="button" name="" value="Show" onclick="show()">
+		<input type="button" name="" value="Hide" onclick="hide()">
+		<script type="text/javascript">
+			function show() {
+			//visibility=collapse,initial,visible,inherit,hidden
+				document.querySelector('.ims').style.visibility='visible';
+				
+			}
+			function hide(){
+                 document.querySelector('.ims').style.visibility='hidden';
+			}		
+		</script>
+
+	</body>
+</html>

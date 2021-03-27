@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>$rootScope Example</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+	</head>
+	<body ng-app="myapp" >
+		<script type="text/javascript">
+			angular.module("myapp",[])
+			.controller("c1",function($rootScope){
+				$rootScope.x=200
+
+			})
+			.controller("c2",function($rootScope){
+				$rootScope.y=400
+			})
+		</script>
+		<div ng-controller="c2">{{y}}--{{x}}</div>
+		<h1 ng-controller="c1">{{x}}--{{y}}</h1>
+		
+
+	</body>
+</html>

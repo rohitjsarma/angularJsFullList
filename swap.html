@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>swapping Two Variable</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="c1">
+		<script type="text/javascript">
+			angular.module("myapp",[])
+			.controller("c1",function($scope){
+				$scope.x=100;
+				$scope.y=200;
+				$scope.fun1=function(){
+					$scope.temp=$scope.x
+					$scope.x=$scope.y;
+					$scope.y=$scope.temp;
+				}
+
+			})
+		</script>
+		<input type="text" name="" ng-model="x">
+		<input type="text" name="" ng-model="y">
+
+		<input type="button" name="" ng-click="fun1()" value="click">
+
+	</body>
+</html>
