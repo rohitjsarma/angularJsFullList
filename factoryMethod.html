@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>factoryMethodExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		app=angular.module("myapp",[])
+		app.controller("c1",function($scope,f1){
+			$scope.fun1=function(){
+				f1.met1();
+				f1.met2();
+			}
+
+		})
+		app.factory("f1",function(){
+			obj={}
+			obj.met1=function(){
+				alert("from method 1")
+			}
+			obj.met2=function(){
+				alert("from met2")
+			}
+			return obj;
+
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+	<input type="button" name="" value="click" ng-click="fun1()">
+
+</body>
+</html>

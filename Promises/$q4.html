@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$qExampleWith$http</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+	angular.module("myapp",[])
+	.controller("c1",function($scope,$http){
+$http.get("p11.html").then(function(dt){
+	alert(dt.data)
+$http.get("p22.html").then(function(dtt){
+	alert(dtt.data)
+$http.get("p3.html").then(function(dttt){
+	alert(dttt.data)
+})
+})
+})
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+</body>
+</html>

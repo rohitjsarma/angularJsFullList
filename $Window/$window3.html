@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$windowLocationOpenExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+angular.module("myapp",[])
+.controller("c1",function($window,$scope){
+	$scope.fun=function(){
+	$window.location="http://google.com"
+	$window.open("http://fb.com")
+	$window.open("http://yahoo.com",
+		"_blank","width=500,height=400")
+
+}
+
+})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<button ng-click="fun()">Open</button>
+
+</body>
+</html>

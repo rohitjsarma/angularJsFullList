@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StateProviders</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script type="text/javascript">
+app=angular.module("myapp",['ui.router'])
+app.config(function($stateProvider){
+$stateProvider
+.state("home",{url:"/hm",templateUrl:"home.html"})
+.state("abt",{url:"/ab",templateUrl:"about.html"})
+.state("cnt",{url:"/cn",templateUrl:"contact.html"})
+})
+	</script>
+</head>
+<body ng-app="myapp">
+	<a ui-sref="home">Home</a>
+	<a ui-sref="abt">About</a>
+	<a ui-sref="cnt">Contact Us </a>
+
+<div ui-view></div>
+
+</body>
+</html>

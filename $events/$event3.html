@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>$eventExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+	angular.module("myapp",[])
+	.controller("c1",function($scope){
+		$scope.fun1=function(e){
+			if(e.button==2)
+			alert("can't copy")
+			alert(e.type)
+		     }
+
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1" ng-mousedown="fun1($event)" ng-click="fun1($event)">
+	<img src="baby.jpeg" width="250">
+
+</body>
+</html>

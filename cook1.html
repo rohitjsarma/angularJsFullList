@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="c1">
+		<script type="text/javascript">
+			angular.module("myapp",['ngCookies'])
+			.controller("c1",function($cookies){
+				$cookies.put("sno",1234)
+				$cookies.put("uname","scott")
+				alert($cookies.get("sno"))
+				alert($cookies.get("uname"))
+			})
+             
+		</script>
+		<a href="p1.html">Go to P1 page</a>
+
+	</body>
+</html>

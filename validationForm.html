@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formValidation</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="validationForm.css">
+	
+	<script type="text/javascript" >
+		angular.module("myapp",[])
+		.controller("c1",function($scope){
+
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<div class="main">
+		<h2 style="color: red;text-align: center;">Form Validation</h2>
+	
+	<form name="f1" action="abc.html" >
+		Enter Name :<br>
+		<input type="text" name="n1" ng-model="n1" required="" minlength="5"  maxlength="10"><br>
+		<span ng-show="f1.n1.$touched && f1.n1.$error.required">User Name Is Required</span><br>
+		<span ng-show=" f1.n1.$touched && f1.n1.$error.minlength">Minimum Five Character Required</span><br>
+		<span ng-show=" f1.n1.$error.maxlength">Maximum Ten Character Allowed</span>
+
+		Enter Password :<br>
+		<input type="Password" name="p1" ng-model="p11" required="" minlength="5" maxlength="10"><br>
+
+		<span ng-show=" f1.p1.$touched && f1.p1.$error.required">Password is Mandatory</span>
+		<span ng-show=" f1.p1.$error.minlength">Minimum five Char required</span>
+		<span ng-show="shwMaxErrMsg">Maximum ten Char required </span><br>
+
+		Enter Email Id :<br>
+		<input type="email" name="e1" ng-model="e1" required="" email><br>
+		 <img src="correct.png" width="15" ng-show="f1.e1.$dirty && f1.e1.$valid">
+         <img src="wrong.png" width="12" ng-show="f1.e1.$dirty && f1.e1.$invalid">
+		<span ng-show=" f1.e1.$touched && f1.e1.$invalid">Email is Mandatory</span>
+		<span ng-show="f1.e1.$error.email">Enter Valid Email</span><br>
+
+
+		Enter Age: <br>
+		<input type="number" name="a1" ng-model=a1 min="10" max="70" required=""><br>
+		<span ng-if="f1.a1.$error.number">No Character Allowed</span>
+		<span ng-show=" f1.a1.$touched && f1.a1.$error.required ">Age Required</span>
+		<span ng-show="f1.a1.$error.max">Maximum Age can be  70</span>
+		<span ng-show="f1.a1.$error.min">Minimum Age should be 10 </span><br>
+		Enter Mobile Number :<br>
+		<input type="text" name="m1" required="" maxlength="10" minlength="10" ng-model=m1 ><br>
+		<span ng-show="f1.m1.$touched && f1.m1.$error.required">Mobile No Is Mandatory</span>
+		<span ng-show="f1.m1.$error.minlength">Mobile Number Not Valid</span><br>
+
+
+		Select Gender:<br>
+		Male :<input type="radio" name="r1"  required="" value="m" ng-model="gen">
+	    Female:<input type="radio" name="r1"  required="" value="f" ng-model="gen">
+	    <span style="color:red" ng-show="f1.r1.$invalid">Mandatory</span><br>
+	    <br>
+	    Select City:<br>
+	    <select name="drp" ng-model=d1 required="">
+	    	<option>Hyd</option>
+	        <option>Sec</option>
+	    	<option>New Delhi</option>
+	    	<option>Mumbai</option>
+	    </select>
+       <span style="color:red" ng-show="f1.drp.$touched && f1.drp.$error.required">You must Select City</span><br>
+	    <br>
+	    <input type="checkbox" name="chk" ng-model="chk" required="" > <span style="color: green">I agree the terms & condition.</span><br>
+	    <span ng-show="f1.chk.$touched && f1.chk.$error.required" >You Must Accept the trems & condition</span>
+	    <br>
+	    <input type="submit" name="sbm" value="Register" ng-disabled="f1.$invalid" >
+
+
+		
+	</form>
+   </div>
+ 
+
+</body>
+</html>

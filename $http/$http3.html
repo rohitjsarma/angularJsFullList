@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AjaxExampleDiffWay</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript">
+    	angular.module("myapp",[])
+    	.controller("c1",function($scope,$http){
+    		$scope.fun1=function(){
+    		$http.get("score.html").then(function(dt){
+    			$scope.str=(dt.data)
+    			console.log(dt)
+    			//document.write(dt.data)
+    		},function(){
+    			alert('err')
+    		})
+    	}
+
+    	})
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+	<input type="button" name="" value="click" ng-click="fun1()">
+	<h1>{{str}}</h1>
+
+
+</body>
+</html>

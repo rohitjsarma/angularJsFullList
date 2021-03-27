@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$q_PromisesExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+app=angular.module("myapp",[])
+app.controller("c1",function($scope,$q){
+	sno=100
+	$scope.fun=function(sn){
+		q=$q.defer()
+		if(angular.isNumber(sn))
+			q.resolve(++sn)
+		else
+			q.reject("error")
+		return q.promise
+	}
+$scope.fun("abc").then(function(dt){
+alert(dt)
+$scope.fun(sno).then(function(dt){
+alert(dt)
+$scope.fun(sno).then(function(dt){
+alert(dt)
+$scope.fun(sno).then(function(dt){
+alert(dt)
+$scope.fun(sno).then(function(dt){
+alert(dt)
+})
+})
+})
+})
+},function(){
+	alert("failed")
+})
+})
+
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+
+</body>
+</html>

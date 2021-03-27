@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>loginREGISTRATIONShowHide</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<style type="text/css">
+			input[type=text]{
+				width: 15em;
+				height: 2em;
+			}
+			input[type=password]{
+				width: 15em;
+				height: 2em;
+			}
+		</style>
+
+	</head>
+	<body ng-app ng-init="temp=true">
+		<input type="button" name="" value="Register" ng-click="temp=true">
+		<input type="button" name="" value="Login" ng-click="temp=false">
+		{{temp}}
+		<div ng-show="temp">
+			<h2>Registration Form</h2>
+			User name:<br><input type="text" name=""><br>
+			Password:<br><input type="Password" name=""><br>
+			<input type="button" name="" value="Register">
+		</div>
+		<div ng-show="temp">
+			<h2>Login Form</h2>
+			User name:<br><input type="text" name=""><br>
+			Password:<br><input type="Password" name=""><br>
+			<input type="button" name="" value="Log in">
+		</div>
+
+	</body>
+</html>

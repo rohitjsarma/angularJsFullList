@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RouteProvider</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script type="text/javascript">
+app=angular.module("myapp",['ngRoute'])
+app.config(function($routeProvider){
+$routeProvider
+.when("/hm",{templateUrl:"home.html"})
+.when("/cn",{templateUrl:"contact.html"})
+.when("/ab",{templateUrl:"about.html"})
+})
+	</script>
+</head>
+<body ng-app="myapp">
+	<a href="#!hm">Home</a>
+	<a href="#!cn">Contact</a>
+	<a href="#!ab">About</a>
+	<div ng-view></div>
+
+</body>
+</html>

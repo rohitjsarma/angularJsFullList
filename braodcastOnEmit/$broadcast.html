@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$BroadcastExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp",[])
+		.controller("c1",function($scope){
+		$scope.fun1=function(){
+        $scope.$broadcast("b1")
+        }
+		})
+		.controller("c2",function($scope){
+        $scope.$on("b1",function(){
+        	alert("from c2")
+        })
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<input type="button" name="" value="fun1" ng-click="fun1()">
+	<div ng-controller=c2>
+		
+	</div>
+
+</body>
+</html>

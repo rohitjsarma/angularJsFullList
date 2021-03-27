@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>$digest for watcher Lyf Cycle</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+	</head>
+
+		<script type="text/javascript">
+		
+           app=angular.module("myapp",[])
+		   app.controller("c1",function($scope){
+               $scope.x=100
+               fun1=function(){
+               $scope.x++
+               alert($scope.x)
+               $scope.$digest()
+         
+                }
+		  })
+			app.controller("c2",function($scope){
+			$scope.y=200
+		    fun2=function(){
+		    $scope.y++
+		    alert($scope.y)
+		       }
+
+          })
+		</script>
+		<body ng-app="myapp" ng-controller="c1">
+		<div >
+		<h1>{{x}}</h1><br>
+		</div>
+		<input type="button" name="" value="click1" onclick="fun1()">
+		<div ng-controller="c2">
+		<h1>{{y}}</h1><br>
+		</div>
+		<input type="button" name="" value="click2" onclick="fun2()">
+
+	</body>
+</html>

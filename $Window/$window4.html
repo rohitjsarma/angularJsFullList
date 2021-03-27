@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$windowsetTimeoutExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+angular.module("myapp",[])
+.controller("c1",function($window,$scope){
+	$window.setTimeout(function(){
+		$window.open("http://yahoo.com")
+	},3000)
+})
+
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	
+
+</body>
+</html>

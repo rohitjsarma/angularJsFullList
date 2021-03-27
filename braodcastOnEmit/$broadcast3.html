@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$broadcastExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.fun1=function(){
+	alert("hi")
+	$scope.$broadcast("b1")
+}
+})
+app.controller("c2",function($scope){
+$scope.$on("b1",function(){
+	alert("child controller 2 exec...")
+	})
+})
+app.controller("c3",function($scope){
+$scope.$on("b1",function(){
+	alert("Child controller 3 exec...")
+})
+})
+		
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+<button ng-click="fun1()">Click</button>
+<div ng-controller=c2></div>
+<div ng-controller="c3"></div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<style type="text/css">
+		img{
+			width: 150px;
+			height:150px;
+			border: 1px solid red;
+			padding: 10px;
+			margin: 10px
+		}
+	</style>
+</head>
+<body ng-app ng-init="x='flower'">
+	Select from drop down list : <select ng-model=x>
+		<option>flower</option>
+		<option>shoe</option>
+		<option>furniture</option>
+		<option>others</option>
+	</select>
+	<div ng-switch=x>
+		<div ng-switch-when="flower">
+			<img src="../images/redRose.jpg">
+			<img src="../images/rose.jpg">
+			<img src="../images/btrfly.jpg">
+		</div>
+		<div ng-switch-when="shoe">
+			<img src="../images/shoe1.jpg">
+			<img src="../images/shoe2.jpg">
+			<img src="../images/shoe3.jpg">			
+		</div>
+		<div ng-switch-when="furniture">
+			<img src="../images/furn1.jpg">
+			<img src="../images/furn2.jpg">
+			<img src="../images/furn3.jpg">			
+		</div>
+		<div ng-switch-default>
+			<img src="../images/pan.jpg">
+			<img src="../images/mouse.jpg">
+			<img src="../images/mixer.jpg">			
+		</div>
+			
+		</div>
+		
+	</div>
+	
+</body>
+</html>

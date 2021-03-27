@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$qExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp" ,[])
+	.controller("c1",function($scope,$q){
+		sno=100
+		$scope.fun1=function(sn){
+		q=$q.defer()
+		if (angular.isNumber(sn))
+			q.resolve(++sn)
+		else
+			q.reject("error")
+		return q.promise;
+	    }
+   $scope.fun1(sno).then(function(dt){
+   	alert(dt)
+   	$scope.fun1("abc").then(function(dt){
+     alert(dt)
+   	},function(){
+   		alert("error in second block")
+   	})
+
+
+   })
+
+
+	})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<style type="text/css">
+		img{
+			width: 100px;
+			height: 100px;
+			border: 1px solild red;
+			padding: 5px;
+			margin: 5px
+
+		}
+		
+	</style>
+
+</head>
+<body ng-app ng-init="x='flower'" >
+	
+	<select ng-model="x">
+	  <option>flower</option>
+	  <option>shoe</option>
+	  <option>furniture</option>
+	  <option>others</option>	
+	</select>
+	<div ng-switch="x">
+		<div ng-switch-when="flower">
+			<img src="../images/img.gif">
+			<img src="../images/rose.jpg">
+			<img src="../images/redRose.jpg">
+			
+		</div>
+		<div ng-switch-when="shoe">
+			<img src="../images/shoe3.jpg">
+			<img src="../images/shoe1.jpg">
+			<img src="../images/shoe2.jpg">
+			
+		</div>
+		<div ng-switch-when="furniture">
+			<h2>Furniture</h2>
+			<img src="../images/furn1.jpg">
+			<img src="../images/furn2.jpg">
+			<img src="../images/furn3.jpg">
+			
+		</div>
+		<div ng-switch-default>
+			<h2>Others</h2>
+		<img src="../images/clock.jpg" ><button>buy</button>
+		<span class="oth"><img src="../images/men4.jpg"><button>buy</button></span>
+		<span class="oth"><img src="../images/pan.jpg"><button>buy</button></span>
+			
+		</div>
+		
+	</div>
+	
+
+
+	
+	
+	
+</body>
+</html>

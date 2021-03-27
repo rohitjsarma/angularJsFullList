@@ -1,0 +1,23 @@
+<script src="angular.min.js"></script>
+	<script>
+		app=angular.module("myapp",[])
+		app.controller("c1",function($scope){
+            $scope.x=0
+            $scope.y=1
+            fun1=function(){
+            $scope.x++
+            alert($scope.x)
+            $scope.$digest()
+        }
+        fun2=function(){
+         $scope.y++
+         alert($scope.y) 
+     }
+  })
+   
+	</script>
+	<body ng-app="myapp" ng-controller="c1">
+    <h1>{{x}}</h1>
+    <input type="button" value ="click"
+     onclick="fun1()">
+	</body>

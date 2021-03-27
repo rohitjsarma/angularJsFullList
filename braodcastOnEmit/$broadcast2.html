@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$brodcastExample</title>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.fun=function(){
+	alert("hi")
+     sno=100
+    $scope.$broadcast("b1",sno)
+}
+})
+app.controller("c2",function($scope){
+ $scope.$on("b1",function(obj,dt){
+ 	//console.log(obj)
+ 	alert(dt)
+
+ })
+})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<div ng-controller="c2"></div>
+<button ng-click="fun()">Click</button>
+</body>
+</html>

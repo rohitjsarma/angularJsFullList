@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$eventExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+	$scope.fun=function(e){
+		if(e.key>=0 && e.key<=9)
+		{
+			alert("valid no")
+		}
+		else
+		{
+			e.preventDefault()
+			alert("Invalid no")
+		}
+		if($scope.t1.length>=10){
+			e.preventDefault()
+		
+		}
+       
+	}
+
+
+})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+<input type="text" name="" ng-model="t1" ng-keydown="fun($event)">
+
+</body>
+</html>

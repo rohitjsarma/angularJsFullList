@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$q.allExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+    angular.module("myapp",[])
+    .controller("c1",function($http,$scope,$q){
+   $q.all([ $http.get("p11.html"), $http.get("p22.html"), $http.get("p33x.html")])
+.then(function(dt){
+alert(dt[0].data)
+alert(dt[1].data)
+alert(dt[2].data)
+},
+function(edt){
+  alert(edt.config.url)
+  console.log(edt)
+
+})
+})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+    <script type="text/javascript" src="cook.js"></script>
+   
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<form method="post" action="xyz.com" target="_blank">
+	userName:<br><input type="text" name="" ng-model="t1" ng-blur="fun()"><br>
+	password:<br><input type="password" name="" ng-model="t2"><br>
+	<input type="checkbox" name="" ng-model="chk1">:Remember me <br>
+			<br>
+	<input type="submit" name="" value="register" ng-click="funlogin()">
+</form>
+
+
+</body>

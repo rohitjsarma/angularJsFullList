@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filterExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp",[])
+		.controller("c1",function($scope){
+			$scope.tmp=true
+			$scope.fun=function(val){
+				$scope.t1=val
+				$scope.tmp=false
+			}
+})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1" ng-init="x=['scott','Alex','Amit','Suresh','Anand','Razz','Riya','Priya','Prakash','Jagat','Rupa']">
+	{{tmp}}
+<input type="text" name="" ng-keyup="tmp=true" ng-model="t1">
+<li ng-repeat="y in x |filter:t1" ng-click="fun(y)" ng-if="tmp" >
+	{{y}}	
+</li>
+</body>
+</html>

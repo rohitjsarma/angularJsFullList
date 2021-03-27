@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>InterceptorExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+	function incpfun(){
+return{
+	request:function(req){
+		console.log("request success")
+		return req;
+	},
+	requestError:function(){
+		console.log("request failed")
+	},
+	response:function(res){
+       console.log("response success")
+       console.log(res)
+       return res;
+	},
+	responseError:function(res){
+		console.log("response failed")
+	}
+
+	}
+}
+	angular.module("myapp",[])
+	.factory("incp1",incpfun)
+	.config(function($httpProvider){
+	$httpProvider.interceptors.push('incp1');
+	})
+	.run(function($http){
+	$http.get("p11.html")
+	.then(function(res){
+	alert(res.data)
+})
+})
+</script>
+</head>
+<body ng-app="myapp">
+
+</body>
+</html>

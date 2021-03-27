@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>$q3.html</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+	angular.module("myapp",[])
+	.controller("c1",function($scope,$q){
+		$scope.sal=1500000
+		$scope.tds=function(salary){
+		qq=$q.defer()
+		if(salary<=250000)
+		  qq.reject("Not Applicable For Tds")
+		else
+		if(salary>250000 && salary<=500000){
+			tds=salary*5/100
+		    qq.reject(tds)
+		}
+		if(salary>500000)
+		{
+			tds=salary*10/100
+			qq.resolve(tds)
+
+		}
+		return qq.promise
+	    }
+///////Tax --------------------------------
+$scope.funpf=function(tx){
+	q=$q.defer()
+	if(tx>=25000 && tx<=40000)
+		q.resolve(1500)
+	else
+	if(tx>40001 && tx<=60000)
+		q.resolve(3000)
+	else
+		if(tx>=60001 && tx<=200000)
+		{
+			q.resolve(10000)
+		}
+	
+	return q.promise
+    }
+
+$scope.tds($scope.sal).then(
+function(dt){
+$scope.tax=dt
+$scope.funpf($scope.tax).then(
+function(dtt){
+$scope.pf=dtt
+ })
+},
+function(dt){
+$scope.tax=(dt)
+$scope.pf="N/A"
+})
+
+})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	Salary :{{sal}}
+	<br><br>
+	Tax:{{tax}}
+	<br><br>
+	PF:{{pf}}
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AjaxExampleDiffWay</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp",[])
+		.controller("c1",function($scope,$http){
+			$http({
+				method:"post",
+				url:"score.html"
+             	}).then(function(d){
+             		document.write(d.data)
+             		alert(d.data)
+             	})	
+
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+
+</body>
+</html>

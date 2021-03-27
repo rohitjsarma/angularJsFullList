@@ -1,0 +1,24 @@
+
+<html>
+<head>
+	<title>$eventExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.fun1=function(e){
+   $scope.str="X pos is:"+e.clientX+" Y pos is:"+e.clientY 
+	$scope.xpos=e.clientX
+	$scope.ypos=e.clientY
+		}
+
+})
+</script>
+</head>
+<body ng-app="myapp" ng-controller="c1" ng-mousemove="fun1($event)">
+	
+<div>{{str}}</div>
+<img src="bird.gif" width="60" style="left:{{xpos}};position:absolute;top:{{ypos}}">
+
+</body>
+</html>

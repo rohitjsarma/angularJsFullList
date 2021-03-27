@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>$apply--> watch cycle of all controller</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="c1">
+		<script type="text/javascript">
+			angular.module("myapp",[])
+			.controller("c1",function($scope){
+               $scope.x=100
+               fun1=function(){
+               $scope.x++
+               alert($scope.x)
+
+           }
+	    })
+			.controller("c2",function($scope){
+               $scope.y=200
+               fun2=function(){
+               $scope.y++
+               alert($scope.y)
+               $scope.$apply(function(){
+               	alert('hello')
+               })
+           }
+		})
+			
+		</script>
+
+		<div>
+		<h1>{{x}}</h1>
+		</div>
+		<input type="button" name="" value="click1" onclick="fun1()">
+		<div ng-controller="c2">
+		<h1>{{y}}</h1>
+		</div>
+		<input type="button" name="" value="click1" onclick="fun2()">
+
+
+	</body>
+</html>

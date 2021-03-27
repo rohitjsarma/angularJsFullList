@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DirectiveWithScope</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp",[])
+		.controller("c1",function($scope){
+			$scope.x=100
+			$scope.y="scott"
+
+		})
+		.directive("d1",function(){
+			return{
+				scope:{
+				v1:"=p1",
+				v2:"=p2",
+				p1:"=v1"
+			},
+	template:"<h1>Hello</h1>{{v1}}{{p1}}-{{v2}}"
+	 
+		}
+
+
+		})
+	</script>
+</head>
+<body ng-app="myapp"  ng-controller="c1">
+	<d1 p1="x" p2="y"></d1>
+	<d1 v1="x" p2="y"></d1>
+
+</body>
+</html>

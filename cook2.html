@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>cookiesWithTimeLimit</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+		<script type="text/javascript" src="angular-cookies.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="c1">
+		<script type="text/javascript">
+			angular.module("myapp",['ngCookies'])
+			.controller("c1",function($cookies){
+				dt=new Date()
+                dt.setDate(dt.getDate()+365*10)
+				
+				$cookies.put("username","raz",{expires:dt});
+				$cookies.put("pswd","1234")
+				alert($cookies.get("username"))
+
+			})
+		</script>
+
+	</body>
+</html>

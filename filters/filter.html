@@ -1,0 +1,44 @@
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+	angular.module("myapp",[])
+	.controller("c1",function($scope){
+		$scope.fun=function(){
+			if ($scope.ord="uname") 
+				$scope.ord="-uname"
+			else
+				$scope.ord="unames"
+
+
+		}
+			$scope.obj=[{
+			uname:"scott",
+			city:"Hyderabad"},
+			{uname:"john",
+			city:"Secundrabad"},
+			{uname:"Raaz",
+             city:"New Delhi"},
+             {uname:"Raaz",
+             city:"New Delhi"
+			}]
+	})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+	{{'rajesh' |uppercase}}<br>
+	{{100 |currency :'&#8377'}}<br>
+	{{'SURESH'|lowercase}}<br>
+	<table border="1">
+		<thead>
+			<th ng-click="fun()">Username</th>
+			<th>City</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="x in obj |orderBy:ord | filter:userSearch">
+				<td>{{x.uname}}</td>
+				<td>{{x.city}}</td>
+		    </tr>
+	    </tbody>
+		
+	</table><br>
+	<input type="text" name="" placeholder="search here" ng-model="userSearch">
+
+</body>

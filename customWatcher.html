@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>customWatcherExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	</head>
+	<body ng-app="myapp" ng-controller="c1">
+		<script type="text/javascript">
+			angular.module("myapp",[])
+		    .controller("c1",function($scope){
+		    	$scope.x=900
+		    	$scope.y=200
+		    	$scope.z=$scope.x+$scope.y
+		    	$scope.$watch("x",function(){
+		    		$scope.z=parseInt($scope.x)+parseInt($scope.y)
+		    	})
+		    	$scope.$watch("y",function(){
+		    		$scope.z=parseInt($scope.x)+parseInt($scope.y)
+		    	})
+
+
+		    })
+		</script>
+		<input type="text" name="" ng-model="x"><br>
+		<input type="text" name="" ng-model="y"><br>
+		<input type="text" name="" ng-model="z"><br>
+		
+
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DirectiveTestExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module("myapp",[])
+		.controller("c1",function($scope){
+			$scope.x="scott"
+
+		})
+		.directive("d1",function(){
+			return{
+				templateUrl:"p1.html"
+				
+			}
+
+		})
+	</script>
+</head>
+<body ng-app="myapp" ng-controller="c1">
+	<d1></d1>
+	<p class="d1"></p>
+	<div d1></div>
+	<div>{{x}}</div>
+
+</body>
+</html>

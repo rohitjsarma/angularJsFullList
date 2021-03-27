@@ -1,0 +1,19 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("d1",function(){
+return{
+	restrict:"ECA",
+	templateUrl:"p1.html"
+	}
+})
+
+</script>
+<body ng-app="myapp">
+<d1></d1>
+<p class="d1"></p>
+<div d1></div>
+</body>
+
+
+

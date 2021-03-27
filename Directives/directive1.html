@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DirectiveExample</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+	  angular.module("myapp",[])
+	  .directive("d1",function(){
+	  	return{
+	  		template:"<h1>Razz</h1>"
+	  	 }
+	  })
+		
+	</script>
+
+</head>
+<body ng-app="myapp">
+	<d1></d1>
+	<d1></d1>
+
+
+</body>
+</html>
