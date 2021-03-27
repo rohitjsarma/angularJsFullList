@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>objectWithArrayAndUsingTable</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<style type="text/css">
+			table,tr,th,td{
+                border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body ng-app ng-init="x=[
+	 {name:'Raaz',age: 25,city:'Vizag'}
+	,{name:'Scott',age:30,city:'Kerala'}
+	,{name:'Alex',age:30,city:'Hyd'}
+	,{name:'Shakira',age:30,city:'Secd'}
+	,{name:'Krish',age:30,city:'Delhi'}]">
+	<table>
+		<th>Name</th>
+		<th>Age</th>
+		<th>City</th>
+		<tr ng-repeat="var in x">
+			<td>{{var.name}}</td>
+			<td>{{var.age}}</td>
+			<td>{{var.city}}</td>
+		</tr>
+	</table>
+	</body>
+</html>
